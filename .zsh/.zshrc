@@ -77,7 +77,6 @@ plugins=(
 	rails
 	ruby
 	vscode
-	zsh_reload
 )
 
 source $ZSH/oh-my-zsh.sh
