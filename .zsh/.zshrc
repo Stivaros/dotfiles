@@ -72,7 +72,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	asdf
-    bundler
+	bundler
 	git
 	common-aliases
 	rails
@@ -107,6 +107,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Spin-specific stuff
+if [ "$SPIN" ]; then
+	# Prepare containers
+  alias devres="dev stop && dev up && dev start"
+	# Provide a one-stop shop
+	alias latest="gcm && gl && devres"
+fi
 
 [[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
 
